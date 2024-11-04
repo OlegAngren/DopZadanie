@@ -1,44 +1,21 @@
-
 grades = [[5, 3, 3, 5, 4], [2, 2, 2, 3], [4, 5, 5, 2], [4, 4, 3], [5, 5, 5, 4, 5]]
 students = {'Johnny', 'Bilbo', 'Steve', 'Khendrik', 'Aaron'}
 
-# Преобразуем множество в отсортированный список, чтобы порядок соответствовал списку оценок
+# Преобразуем множество студентов в отсортированный список
 students_list = sorted(students)
 
-# Находим индекс ученика 'Aaron'
-index_aaron = students_list.index('Aaron')
+# Создаем пустой словарь для хранения имен и средних баллов
+average_grades = {}
 
-# Рассчитываем средний балл для 'Aaron'
-average_grade_aaron = sum(grades[index_aaron]) / len(grades[index_aaron])
+# Проходимся по каждому студенту и его оценкам
+for i in range(len(students_list)):
+    student = students_list[i]
+    grades_list = grades[i]
+    # Вычисляем средний балл
+    average_grade = sum(grades_list) / len(grades_list)
+    # Добавляем данные в словарь
+    average_grades[student] = average_grade
 
-# Находим индекс ученика 'Bilbo'
-index_bilbo = students_list.index('Bilbo')
-
-# Рассчитываем средний балл для 'Bilbo'
-average_grade_bilbo = sum(grades[index_bilbo]) / len(grades[index_bilbo])
-
-
-# Находим индекс ученика 'Johnny'
-index_johnny = students_list.index('Johnny')
-
-# Рассчитываем средний балл для 'Johnny'
-average_grade_johnny = sum(grades[index_johnny]) / len(grades[index_johnny])
-
-# Находим индекс ученика 'Khendrik'
-index_khendrik = students_list.index('Khendrik')
-
-# Рассчитываем средний балл для 'Khendrik'
-average_grade_khendrik = sum(grades[index_khendrik]) / len(grades[index_khendrik])
-
-# Находим индекс ученика 'Steve'
-index_steve = students_list.index('Steve')
-
-# Рассчитываем средний балл для 'Steve'
-average_grade_steve = sum(grades[index_steve]) / len(grades[index_steve])
-
-average_grades = {'Aaron':average_grade_aaron,'Bilbo': average_grade_bilbo ,'Johnny': average_grade_johnny,'Khendrik': average_grade_khendrik,'Steve':average_grade_steve}
-
+# Выводим результат
 print(average_grades)
-
-
 
